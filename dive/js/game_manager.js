@@ -325,6 +325,9 @@ GameManager.prototype.tileMatchesAvailable = function () {
 
   var tile;
 
+  // this appears to be redundant, as it checks every tile and every direction, 
+  // which means we check every actual possible merge twice and an additional
+  // sixteen 
   for (var x = 0; x < this.size; x++) {
     for (var y = 0; y < this.size; y++) {
       tile = this.grid.cellContent({ x: x, y: y });

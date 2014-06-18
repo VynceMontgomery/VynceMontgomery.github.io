@@ -8,17 +8,23 @@ html, body {
   font-size: 18px; }
 
 body {
-  margin: 80px 0; }
+  margin: 40px 0; 
+  }
 
+.heading {
+  padding: 10px;
+  }
+  
 .heading:after {
   content: "";
   display: block;
-  clear: both; }
+  clear: both; 
+  }
 
 h1.title {
   font-size: 80px;
   font-weight: bold;
-  margin: 0;
+  margin: 20px 0;
   display: block;
   float: left; }
 
@@ -51,7 +57,9 @@ h1.title {
 
 .scores-container {
   float: right;
-  text-align: right; }
+  text-align: right; 
+  padding: 0;
+  }
 
 .currently-unlocked {
   display: block; 
@@ -62,21 +70,21 @@ h1.title {
 .currently-unlocked.hidden { display: none; }
 .currently-unlocked.all-seeds-seen {
   line-height: 30px;
+  height: auto;
+  padding: 25px 0 0 0;
 }
 
 .score-container, .best-container, .currently-unlocked {
   background: #bbada0;
   font-size: 25px;
   font-weight: bold;
-  border-radius: 3px;
+  border-radius: 6px;
   color: white;
   margin-top: 8px;
   text-align: center; 
   position: relative; }
 .score-container, .best-container {
-  padding: 15px 25px;
-  height: 25px;
-  line-height: 47px; 
+  margin-left: 10px;
   display: inline-block; }
   .score-container:after, .best-container:after, .currently-unlocked:after {
     text-transform: uppercase;
@@ -87,11 +95,12 @@ h1.title {
     width: 100%;
     top: 10px;
     left: 0; 
-    line-height: 13px; }
+    line-height: 13px; 
+    z-index: 11;
+    }
   .score-container .score-addition, .best-container .score-addition {
     position: absolute;
     right: 30px;
-    color: red;
     font-size: 25px;
     line-height: 25px;
     font-weight: bold;
@@ -113,7 +122,7 @@ h1.title {
 .currently-unlocked.all-seeds-seen:after { 
   content: "All seeds seen"; 
 }
-.currently-unlocked .ghost { color: #d4c8bd; }
+.currently-unlocked .ghost { opacity: 0.25; }
 
 p {
   margin-top: 0;
@@ -258,8 +267,8 @@ hr {
     clear: both; }
 
 .grid-cell {
-  width: 106.25px;
-  height: 106.25px;
+  width: 106px;
+  height: 106px;
   margin-right: 15px;
   float: left;
   border-radius: 3px;
@@ -272,9 +281,9 @@ hr {
   z-index: 2; }
 
 .tile {
-  width: 106.25px;
-  height: 106.25px;
-  line-height: 116.25px; }
+  width: 106px;
+  height: 106px;
+  line-height: 116px; }
   .tile.tile-position-1-1 {
     position: absolute;
     left: 0px;
@@ -341,8 +350,8 @@ hr {
     top: 364px; }
 
 .tilenumber {
-  width: 106.25px;
-  height: 106.25px;
+  width: 106px;
+  height: 106px;
   position: absolute;
   left: 0;
   top: 0;
@@ -358,7 +367,7 @@ hr {
   z-index: 12;
 }
 .tilenumber.tile-small-4 {
-  font-size: 44px !important; }
+  font-size: 42px !important; }
 .tilenumber.tile-small-5 {
   font-size: 35px !important; }
 .tilenumber.tile-small-6 {
@@ -533,207 +542,163 @@ hr {
   .tile.tile-1296000  { background: #fff; }
 
 .tileoverlay { 
-  width: 106.25px;
-  height: 106.25px;
+  width: 106px;
+  height: 106px;
   position: absolute;
   left: 0;
   top: 0;
-  z-index: 11;
+  z-index: 10;
+  background-image: url('http://alexfink.github.io/dive/tileoverlays/sprite.png'); 
+  background-size: 200% auto;
 }
-.tileoverlay.tileoverlay-7    { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/7.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-49   { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/49.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-11   { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/11.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-121  { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/121.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-13 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/13.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-169 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/169.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-17 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/17.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-289 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/289.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-19 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/19.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-361 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/361.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-23 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/23.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-529 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/529.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-29 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/29.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-841 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/841.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-31 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/31.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-961 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/961.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-37 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/37.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-1369 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/1369.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-41 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/41.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-1681 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/1681.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-43 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/43.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-1849 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/1849.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-47 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/47.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-2209 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/2209.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-53 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/53.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-2809 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/2809.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-59 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/59.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-3481 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/3481.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-61 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/61.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-3721 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/3721.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-67 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/67.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-4489 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/4489.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-71 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/71.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-5041 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/5041.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-73 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/73.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-5329 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/5329.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-79 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/79.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-6241 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/6241.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-83 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/83.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-6889 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/6889.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-89 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/89.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-7921 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/7921.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-97 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/97.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-9409 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/9409.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-101 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/101.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-10201 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/10201.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-103 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/103.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-10609 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/10609.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-107 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/107.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-11449 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/11449.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-109 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/109.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-11881 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/11881.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-113 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/113.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-12769 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/12769.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-127 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/127.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-16129 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/16129.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-131 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/131.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-17161 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/17161.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-137 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/137.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-18769 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/18769.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-139 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/139.png'); 
-  background-size: cover; }
-.tileoverlay.tileoverlay-19321 { 
-  background: url('http://alexfink.github.io/dive/tileoverlays/19321.png'); 
-  background-size: cover; }
+.tileoverlay.tileoverlay-7    { background-position: 0% 0%; }
+.tileoverlay.tileoverlay-49   { background-position: -100% 0%; }
+.tileoverlay.tileoverlay-11    { background-position: 0% -100%; }
+.tileoverlay.tileoverlay-121  { background-position: -100% -100%; }
+.tileoverlay.tileoverlay-13 { background-position: 0% -200%; }
+.tileoverlay.tileoverlay-169 { background-position: -100% -200%; }
+.tileoverlay.tileoverlay-17 { background-position: 0% -300%; }
+.tileoverlay.tileoverlay-289 { background-position: -100% -300%; }
+.tileoverlay.tileoverlay-19 { background-position: 0% -400%; }
+.tileoverlay.tileoverlay-361 { background-position: -100% -400%; }
+.tileoverlay.tileoverlay-23 { background-position: 0% -500%; }
+.tileoverlay.tileoverlay-529 { background-position: -100% -500%; }
+.tileoverlay.tileoverlay-29 { background-position: 0% -600%; }
+.tileoverlay.tileoverlay-841 { background-position: -100% -600%; }
+.tileoverlay.tileoverlay-31 { background-position: 0% -700%; }
+.tileoverlay.tileoverlay-961 { background-position: -100% -700%; }
+.tileoverlay.tileoverlay-37 { background-position: 0% -800%; }
+.tileoverlay.tileoverlay-1369 { background-position: -100% -800%; }
+.tileoverlay.tileoverlay-41 { background-position: 0% -900%; }
+.tileoverlay.tileoverlay-1681 { background-position: -100% -900%; }
+.tileoverlay.tileoverlay-43 { background-position: 0% -1000%; }
+.tileoverlay.tileoverlay-1849 { background-position: -100% -1000%; }
+.tileoverlay.tileoverlay-47 { background-position: 0% -1100%; }
+.tileoverlay.tileoverlay-2209 { background-position: -100% -1100%; }
+.tileoverlay.tileoverlay-53 { background-position: 0% -1200%; }
+.tileoverlay.tileoverlay-2809 { background-position: -100% -1200%; }
+.tileoverlay.tileoverlay-59 { background-position: 0% -1300%; }
+.tileoverlay.tileoverlay-3481 { background-position: -100% -1300%; }
+.tileoverlay.tileoverlay-61 { background-position: 0% -1400%; }
+.tileoverlay.tileoverlay-3721 { background-position: -100% -1400%; }
+.tileoverlay.tileoverlay-67 { background-position: 0% -1500%; }
+.tileoverlay.tileoverlay-4489 { background-position: -100% -1500%; }
+.tileoverlay.tileoverlay-71 { background-position: 0% -1600%; }
+.tileoverlay.tileoverlay-5041 { background-position: -100% -1600%; }
+.tileoverlay.tileoverlay-73 { background-position: 0% -1700%; }
+.tileoverlay.tileoverlay-5329 { background-position: -100% -1700%; }
+.tileoverlay.tileoverlay-79 { background-position: 0% -1800%; }
+.tileoverlay.tileoverlay-6241 { background-position: -100% -1800%; }
+.tileoverlay.tileoverlay-83 { background-position: 0% -1900%; }
+.tileoverlay.tileoverlay-6889 { background-position: -100% -1900%; }
+.tileoverlay.tileoverlay-89 { background-position: 0% -2000%; }
+.tileoverlay.tileoverlay-7921 { background-position: -100% -2000%; }
+.tileoverlay.tileoverlay-97 { background-position: 0% -2100%; }
+.tileoverlay.tileoverlay-9409 { background-position: -100% -2100%; }
+.tileoverlay.tileoverlay-101 { background-position: 0% -2200%; }
+.tileoverlay.tileoverlay-10201 { background-position: -100% -2200%; }
+.tileoverlay.tileoverlay-103 { background-position: 0% -2300%; }
+.tileoverlay.tileoverlay-10609 { background-position: -100% -2300%; }
+.tileoverlay.tileoverlay-107 { background-position: 0% -2400%; }
+.tileoverlay.tileoverlay-11449 { background-position: -100% -2400%; }
+.tileoverlay.tileoverlay-109 { background-position: 0% -2500%; }
+.tileoverlay.tileoverlay-11881 { background-position: -100% -2500%; }
+.tileoverlay.tileoverlay-113 { background-position: 0% -2600%; }
+.tileoverlay.tileoverlay-12769 { background-position: -100% -2600%; }
+.tileoverlay.tileoverlay-127 { background-position: 0% -2700%; }
+.tileoverlay.tileoverlay-16129 { background-position: -100% -2700%; }
+.tileoverlay.tileoverlay-131 { background-position: 0% -2800%; }
+.tileoverlay.tileoverlay-17161 { background-position: -100% -2800%; }
+.tileoverlay.tileoverlay-137 { background-position: 0% -2900%; }
+.tileoverlay.tileoverlay-18769 { background-position: -100% -2900%; }
+.tileoverlay.tileoverlay-139 { background-position: 0% -3000%; }
+.tileoverlay.tileoverlay-19321 { background-position: -100% -3000%; }
+.tileoverlay.tileoverlay-149 { background-position: 0% -3100%; }
+.tileoverlay.tileoverlay-22201 { background-position: -100% -3100%; }
+.tileoverlay.tileoverlay-151 { background-position: 0% -3200%; }
+.tileoverlay.tileoverlay-22801 { background-position: -100% -3200%; }
+.tileoverlay.tileoverlay-157 { background-position: 0% -3300%; }
+.tileoverlay.tileoverlay-24649 { background-position: -100% -3300%; }
+.tileoverlay.tileoverlay-163 { background-position: 0% -3400%; }
+.tileoverlay.tileoverlay-26569 { background-position: -100% -3400%; }
+.tileoverlay.tileoverlay-167 { background-position: 0% -3500%; }
+.tileoverlay.tileoverlay-27889 { background-position: -100% -3500%; }
+.tileoverlay.tileoverlay-173 { background-position: 0% -3600%; }
+.tileoverlay.tileoverlay-29929 { background-position: -100% -3600%; }
+.tileoverlay.tileoverlay-179 { background-position: 0% -3700%; }
+.tileoverlay.tileoverlay-32041 { background-position: -100% -3700%; }
+.tileoverlay.tileoverlay-181 { background-position: 0% -3800%; }
+.tileoverlay.tileoverlay-32761 { background-position: -100% -3800%; }
+.tileoverlay.tileoverlay-191 { background-position: 0% -3900%; }
+.tileoverlay.tileoverlay-36481 { background-position: -100% -3900%; }
+.tileoverlay.tileoverlay-193 { background-position: 0% -4000%; }
+.tileoverlay.tileoverlay-37249 { background-position: -100% -4000%; }
+.tileoverlay.tileoverlay-197 { background-position: 0% -4100%; }
+.tileoverlay.tileoverlay-38809 { background-position: -100% -4100%; }
+.tileoverlay.tileoverlay-199 { background-position: 0% -4200%; }
+.tileoverlay.tileoverlay-39601 { background-position: -100% -4200%; }
+.tileoverlay.tileoverlay-211 { background-position: 0% -4300%; }
+.tileoverlay.tileoverlay-44521 { background-position: -100% -4300%; }
+.tileoverlay.tileoverlay-223 { background-position: 0% -4400%; }
+.tileoverlay.tileoverlay-49729 { background-position: -100% -4400%; }
+.tileoverlay.tileoverlay-227 { background-position: 0% -4500%; }
+.tileoverlay.tileoverlay-51529 { background-position: -100% -4500%; }
+.tileoverlay.tileoverlay-229 { background-position: 0% -4600%; }
+.tileoverlay.tileoverlay-52441 { background-position: -100% -4600%; }
+.tileoverlay.tileoverlay-233 { background-position: 0% -4700%; }
+.tileoverlay.tileoverlay-54289 { background-position: -100% -4700%; }
+.tileoverlay.tileoverlay-239 { background-position: 0% -4800%; }
+.tileoverlay.tileoverlay-57121 { background-position: -100% -4800%; }
+.tileoverlay.tileoverlay-241 { background-position: 0% -4900%; }
+.tileoverlay.tileoverlay-58081 { background-position: -100% -4900%; }
+.tileoverlay.tileoverlay-251 { background-position: 0% -5000%; }
+.tileoverlay.tileoverlay-63001 { background-position: -100% -5000%; }
+.tileoverlay.tileoverlay-257 { background-position: 0% -5100%; }
+.tileoverlay.tileoverlay-66049 { background-position: -100% -5100%; }
+.tileoverlay.tileoverlay-263 { background-position: 0% -5200%; }
+.tileoverlay.tileoverlay-69169 { background-position: -100% -5200%; }
+.tileoverlay.tileoverlay-269 { background-position: 0% -5300%; }
+.tileoverlay.tileoverlay-72361 { background-position: -100% -5300%; }
+.tileoverlay.tileoverlay-271 { background-position: 0% -5400%; }
+.tileoverlay.tileoverlay-73441 { background-position: -100% -5400%; }
+.tileoverlay.tileoverlay-277 { background-position: 0% -5500%; }
+.tileoverlay.tileoverlay-76729 { background-position: -100% -5500%; }
+.tileoverlay.tileoverlay-281 { background-position: 0% -5600%; }
+.tileoverlay.tileoverlay-78961 { background-position: -100% -5600%; }
+.tileoverlay.tileoverlay-283 { background-position: 0% -5700%; }
+.tileoverlay.tileoverlay-80089 { background-position: -100% -5700%; }
+.tileoverlay.tileoverlay-293 { background-position: 0% -5800%; }
+.tileoverlay.tileoverlay-85849 { background-position: -100% -5800%; }
+.tileoverlay.tileoverlay-307 { background-position: 0% -5900%; }
+.tileoverlay.tileoverlay-94249 { background-position: -100% -5900%; }
+.tileoverlay.tileoverlay-311 { background-position: 0% -6000%; }
+.tileoverlay.tileoverlay-96721 { background-position: -100% -6000%; }
+.tileoverlay.tileoverlay-313 { background-position: 0% -6100%; }
+.tileoverlay.tileoverlay-97969 { background-position: -100% -6100%; }
+.tileoverlay.tileoverlay-317 { background-position: 0% -6200%; }
+.tileoverlay.tileoverlay-100489 { background-position: -100% -6200%; }
+.tileoverlay.tileoverlay-331 { background-position: 0% -6300%; }
+.tileoverlay.tileoverlay-109561 { background-position: -100% -6300%; }
+.tileoverlay.tileoverlay-337 { background-position: 0% -6400%; }
+.tileoverlay.tileoverlay-113569 { background-position: -100% -6400%; }
+.tileoverlay.tileoverlay-347 { background-position: 0% -6500%; }
+.tileoverlay.tileoverlay-120409 { background-position: -100% -6500%; }
+.tileoverlay.tileoverlay-349 { background-position: 0% -6600%; }
+.tileoverlay.tileoverlay-121801 { background-position: -100% -6600%; }
+.tileoverlay.tileoverlay-353 { background-position: 0% -6700%; }
+.tileoverlay.tileoverlay-124609 { background-position: -100% -6700%; }
+.tileoverlay.tileoverlay-359 { background-position: 0% -6800%; }
+.tileoverlay.tileoverlay-128881 { background-position: -100% -6800%; }
+.tileoverlay.tileoverlay-367 { background-position: 0% -6900%; }
+.tileoverlay.tileoverlay-134689 { background-position: -100% -6900%; }
 
 .tile.minitile, .tile.minitile .tilenumber, .tile.minitile .tileoverlay {
-  width: 42.5px; 
-  height: 42.5px; 
+  width: 43px; 
+  height: 43px; 
   display: inline-block; }
 .tile.minitile {  
   position: relative; 
-  line-height: 52.5px;
+  line-height: 53px;
   margin: 3px; 
 }
 .tile.minitile .tilenumber {
@@ -857,7 +822,7 @@ hr {
     padding: 0 20px; }
 
   h1.title {
-    font-size: 27px;
+    font-size: 35px;
     margin-top: 15px; }
 
   .container {
@@ -867,10 +832,6 @@ hr {
   .score-container, .best-container, .currently-unlocked {
     margin-top: 0;
     min-width: 40px; }
-  .score-container, .best-container {
-    padding: 15px 10px; }
-  .currently-unlocked {
-    padding: 25px 0px 15px; }
 
   .heading {
     margin-bottom: 10px; }
@@ -1067,19 +1028,38 @@ hr {
     height: 57.5px;
     font-size: 35px; 
    }
-  .tilenumber.tile-small-4 {
+  .tilenumber.tile-small-3 {
     font-size: 28px !important; }
+  .tilenumber.tile-small-4 {
+    font-size: 22px !important; }
   .tilenumber.tile-small-5 {
-    font-size: 21px !important; }
+    font-size: 18px !important; }
   .tilenumber.tile-small-6 {
-    font-size: 14px !important; }
+    font-size: 15px !important; }
 
   .tile.minitile, .tile.minitile .tilenumber, .tile.minitile .tileoverlay {
+    font-size: 18px;
+    line-height: 28px;
     width: 23px; 
-    height: 23px; }
-  .tile.minitile {  
-    line-height: 33px;
-  }
+    height: 23px; 
+    }
+
+  .tile.minitile {
+    margin: 2px;
+    }
+
+  .tile.minitile .tilenumber.tile-small-3 {
+    font-size: 14px !important; }
+  .tile.minitile .tilenumber.tile-small-4 {
+    font-size: 12px !important; }
+  .tile.minitile .tilenumber.tile-small-5 {
+    font-size: 10px !important; }
+  .tile.minitile .tilenumber.tile-small-6 {
+    font-size: 8px !important; }
+
+  .score-container:after, .best-container:after, .currently-unlocked:after {
+    top: 6px;
+    }
 
   .game-message p {
     font-size: 30px !important;

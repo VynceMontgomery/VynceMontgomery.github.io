@@ -10,7 +10,9 @@ function HTMLActuator() {
   
   this.overlayPrimes = [7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 
     53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 
-    131, 137, 139];
+    131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197,
+    199, 211, 223, 227, 229, 233, 239, 241, 251, 257, 263, 269, 271, 277,
+    281, 283, 293, 307, 311, 313, 317, 331, 337, 347, 349, 353, 359, 367];
 }
 
 HTMLActuator.prototype.actuate = function (grid, metadata) {
@@ -124,6 +126,13 @@ HTMLActuator.prototype.createTile = function (tile, animate) {
   return element;
 }
 
+HTMLActuator.prototype.createMiniTile = function (value) { 
+  var tile = new Tile ({x: null, y: null}, value);
+  var tileElement = this.createTile(tile, false);
+  tileElement.classList.add("minitile");
+  return tileElement;
+};
+
 HTMLActuator.prototype.addTile = function (tile) {
   var element = this.createTile(tile, true);
 
@@ -152,7 +161,9 @@ HTMLActuator.prototype.updateScore = function (score) {
   var difference = score - this.score;
   this.score = score;
 
-  this.scoreContainer.textContent = this.score;
+  var tile = new Tile({x: null, y: null}, score);
+  var tileElement = this.createTile(tile, false)
+  this.scoreContainer.appendChild(tileElement);
 
   if (difference > 0) {
     var addition = document.createElement("div");
@@ -164,7 +175,10 @@ HTMLActuator.prototype.updateScore = function (score) {
 };
 
 HTMLActuator.prototype.updateBestScore = function (bestScore) {
-  this.bestContainer.textContent = bestScore;
+  this.clearContainer(this.bestContainer);
+  var tile = new Tile({x: null, y: null}, bestScore);
+  var tileElement = this.createTile(tile, false)
+  this.bestContainer.appendChild(tileElement);
 };
 
 HTMLActuator.prototype.announce = function (message) {
@@ -190,10 +204,15 @@ HTMLActuator.prototype.message = function (game_over_data) {
       if (seen[i] == seen[i+1])
         seen.splice(i,1);
 
-    for (var i = 0; i < seen.length; i++)
-        if (game_over_data.tileTypes.indexOf(seen[i]) == -1)
-            seen[i] = "<span class=\"ghost\">" + seen[i] + "</span>"; // ick
-    this.currentlyUnlocked.innerHTML = seen.join(", ");
+    this.clearContainer(this.currentlyUnlocked);
+
+    for (var i = 0; i < seen.length; i++) {
+        var seenElem = this.createMiniTile(seen[i]);
+        if (game_over_data.tileTypes.indexOf(seen[i]) == -1) {
+            seenElem.classList.add('ghost');
+        }
+        this.currentlyUnlocked.appendChild(seenElem);
+    }
     this.currentlyUnlocked.classList.add("all-seeds-seen");
   }
 };
@@ -211,10 +230,7 @@ HTMLActuator.prototype.updateCurrentlyUnlocked = function (list) {
 
   var self = this;
   list.forEach(function (value) {
-    var tile = new Tile ({ x: null, y: null }, value);
-    var tileElement = self.createTile(tile, false);
-    tileElement.classList.add("minitile");
-    self.currentlyUnlocked.appendChild(tileElement);
+    self.currentlyUnlocked.appendChild(self.createMiniTile(value));
   });
 }
 
